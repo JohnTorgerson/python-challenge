@@ -5,32 +5,23 @@ import csv
 csvpath = os.path.join('Resources', 'budget_data.csv')
 
 #Read the CSV File
-with open(csvpath, encoding='utf') as csv_file:	
+with open(csvpath, encoding='utf') as csv_file:
 	csv_reader = csv.reader(csv_file, delimiter=",")
 
-output_path = os.path.join('Resources', 'budget_data.csv')	
-with open(output_path, 'w') as csvfile:
-## Append Header Row
-	for row in csv_reader:
-		row.append(row[0])
+	print(csv_reader)
 
-
-	#Read the header row first
-	csv_header = next(csv_file)
-	print(f"Header: {csv_header}")
-
+	csv_header = next(csv_reader)
+    print(f"CSV Header: {csv_header}")
 	
 	# Define start values of loop
 	month = 0
 	change = 0
 
 	# Read each row and count them
-	for row in csv_reader:
-
-		month = month + 1
-	tMonths = month -1
-
-	print(f"Months: {month}")
+	#for row[1] in csv_reader:
+		#month = month + 1
+		#tMonths = month -1
+	#print(f"Months: {tMonths}")
 
 
 		
@@ -52,7 +43,7 @@ print(" ")
 print("Financial Analysis")
 print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
 print(" ")
-print(f"Total Months: Months")
+#print(f"Total Months: {tMonths}")
 print(f"Change: " +"string")
 print(f"Average Change: " +"$" +"Average")
 print(f"Greatest Increase in Profits: " + "Date + gInc")
